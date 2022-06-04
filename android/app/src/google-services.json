@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845388235659",
+    "project_id": "rsapp-e9ea6",
+    "storage_bucket": "rsapp-e9ea6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845388235659:android:09d421dfe11ce4b0eba58e",
+        "android_client_info": {
+          "package_name": "com.myorg.parking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845388235659-7r2qho2kbkvtgbade4c4c792r5bjjeus.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myorg.parking",
+            "certificate_hash": "194e7997d5d63cb3448e0abc2f30eae2e0d4ac2d"
+          }
+        },
+        {
+          "client_id": "845388235659-sblfjl5bl5sh0g0oa02g14855ak59m8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA19R3qAL1kpquUj7J_DiSHE2cH1jT30gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845388235659-sblfjl5bl5sh0g0oa02g14855ak59m8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

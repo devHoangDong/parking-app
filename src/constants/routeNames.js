@@ -1,0 +1,9 @@
+export const SETTINGS = "Settings";
+export const LOGIN = "Login";
+export const REGISTER = "Register";
+export const HOME_NAVIGATOR = "HOME_NAVIGATOR";
+export const HOME_MAIN = "HOME_MAIN";
+export const HOME_APP = "HOME_APP";
+export const LOGOUT = "Logout";
+export const SIGNLIST = "SignList";
+export const HELP = "HELP";
