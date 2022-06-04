@@ -149,7 +149,7 @@ function Menu({ navigation }) {
                 marginTop: 0
               }}
               onPress={() => {
-                navigation.navigate('SignList');
+                navigation.navigate('ListViewParkingNavigation');
                 navigation.closeDrawer();
               }}
             >

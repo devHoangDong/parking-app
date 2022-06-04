@@ -108,7 +108,7 @@ const LoginScreen = (props) => {
 
   const handleRegister = async (phone, username, password) => {
     if (!phone || !username || !password) {
-      Alert.alert('Thất bại!', "Dữ liệu nhập không được bỏ trống", [{ text: 'Okay' }]);
+      Alert.alert('Thất bại!', "Dữ liệu nhập không được bỏ trống", [{ text: 'Ok' }]);
       return
     }
     try {
@@ -117,7 +117,7 @@ const LoginScreen = (props) => {
         username: username,
       };
       await setCredentials(userData, password);
-      Alert.alert('Đăng ký thành công!', "", [{ text: 'Okay' }]);
+      Alert.alert('Đăng ký thành công!', "", [{ text: 'Ok' }]);
       props.navigation.navigate('LOGIN');
     } catch (error) {
       Alert.alert('Có lỗi xảy ra!', '', [{ text: error }]);
