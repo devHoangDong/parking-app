@@ -11,7 +11,7 @@ import ListViewParkingNavigation from '../screens/Main/list-view-parking/ListVie
 const HomeStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const MainTabScreen = (props) => {
+const MainNavigator = (props) => {
   return (
     <Tab.Navigator
       initialRouteName="Home1"
@@ -29,10 +29,11 @@ const MainTabScreen = (props) => {
       }}
     >
       <Tab.Screen
-        name="Home1"
-        children={props => (
-          <HomeStackScreen {...props} />
-        )}
+        name="HomeStackScreen"
+        // children={props => (
+        //   <HomeStackScreen {...props} />
+        // )}
+        component={HomeStackScreen}
         options={{
           tabBarLabel: "Trang chủ",
           tabBarColor: '#FFDB53',
@@ -62,7 +63,7 @@ const MainTabScreen = (props) => {
     </Tab.Navigator>
   )
 };
-export default MainTabScreen;
+export default MainNavigator;
 
 const HomeStackScreen = (props) => {
   const navigation = useNavigation();
@@ -79,7 +80,7 @@ const HomeStackScreen = (props) => {
         },
       }}>
       <HomeStack.Screen
-        name="Home"
+        name="HomeScreen"
         component={HomeScreen}
         options={{
           title: 'Trang chủ',

@@ -10,7 +10,7 @@ import {
 import { useSelector } from 'react-redux';
 import { useAuth } from './context/authcontext';
 import AuthNavigator from './navigation/AuthNavigator';
-import MainTabScreen from './navigation/MainNavigator';
+import MainNavigator from './navigation/MainNavigator';
 import Menu from './screens/Menu/Menu';
 
 const AppRouter = () => {
@@ -43,12 +43,12 @@ const AppRouter = () => {
     const AppStack = () => {
         return (
             <Drawer.Navigator
-                initialRouteName="MainTabScreen"
+                initialRouteName="MainNavigator"
                 drawerContent={props => <Menu {...props} />}
             >
                 <Drawer.Screen
-                    name="MainTabScreen"
-                    component={MainTabScreen}
+                    name="MainNavigator"
+                    component={MainNavigator}
                     options={{ headerShown: false }}
                 />
             </Drawer.Navigator>

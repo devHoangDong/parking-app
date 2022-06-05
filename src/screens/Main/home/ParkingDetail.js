@@ -2,6 +2,7 @@ import React from "react";
 import {
   ScrollView,
   StyleSheet,
+  View,
   Image,
   TouchableWithoutFeedback,
   ImageBackground,
@@ -10,33 +11,18 @@ import {
 import { format } from "date-fns";
 import vi from 'date-fns/locale/vi'
 //galio
-import { Block, Text, theme, Button } from "galio-framework";
+import { Block, Text, theme } from "galio-framework";
+import { Button } from 'react-native-elements';
+import VideoPlayer from "react-native-video-player";
+const sample = require('./../../../assets/videos/outpy.mp4')
 //argon
 
 const { width } = Dimensions.get("screen");
 
 const thumbMeasure = (width - 48 - 32) / 3;
 const cardWidth = width - theme.SIZES.BASE * 2;
-const categories = [
-  {
-    title: "Music Album",
-    description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
-    image:
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?fit=crop&w=840&q=80",
-    price: "$125"
-  },
-  {
-    title: "Events",
-    description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
-    image:
-      "https://images.unsplash.com/photo-1543747579-795b9c2c3ada?fit=crop&w=840&q=80",
-    price: "$35"
-  }
-];
 
-const ParkingDetail = ({ route, navigation }) => {
+const ParkingDetail = ({ navigation }) => {
   return (
     <Block flex center style={styles.articles}>
       <ScrollView
@@ -44,7 +30,47 @@ const ParkingDetail = ({ route, navigation }) => {
         style={styles.articles}
         flex={1}
       >
-        <Text>No data</Text>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }}
+        >
+          <VideoPlayer
+            video={sample}
+            videoWidth={1600}
+            videoHeight={900}
+            showDuration={false}
+            autoplay
+            muted
+            loop
+            hideControlsOnStart
+            disableSeek
+            pauseOnPress
+            fullScreenOnLongPress
+          />
+          <View
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'row',
+            }}
+          >
+            <Button
+              title={'Xem vị trí còn trống'}
+              buttonStyle={{ backgroundColor: '#95CD41', height: 48, paddingHorizontal: 40, marginTop: 20 }}
+              onPress={() =>
+                navigation.navigate('ListViewParkingCurrent')}
+            // navigation.navigate(
+            // 'ListViewParkingNavigation',
+            // {},
+            // NavigationActions.navigate({
+            //   routeName: 'ListViewParking'
+            // })
+            ></Button>
+          </View>
+        </View>
         {/* {route.params?.item?.detail()} */}
       </ScrollView>
     </Block>
