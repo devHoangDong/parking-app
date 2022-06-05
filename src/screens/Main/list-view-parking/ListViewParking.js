@@ -8,7 +8,7 @@ import { usePromiseTracker } from "react-promise-tracker";
 import argonTheme from '../../../constants/Theme';
 
 
-const ListViewParking = (props) => {
+const ListViewParking = () => {
   const { promiseInProgress } = usePromiseTracker();
 
   if (promiseInProgress) {
@@ -18,24 +18,39 @@ const ListViewParking = (props) => {
   }
   const listViewArr = [
     {
-      name: "VIEW 1",
-      id: 1
+      name: "VỊ TRÍ 1",
+      id: 1,
+      color: '#95CD41'
     },
     {
-      name: "VIEW 2",
-      id: 2
+      name: "VỊ TRÍ 2",
+      id: 2,
+      color: 'red'
     },
     {
-      name: "VIEW 3",
-      id: 3
+      name: "VỊ TRÍ 3",
+      id: 3,
+      color: '#95CD41'
     },
     {
-      name: "VIEW 4",
-      id: 4
+      name: "VỊ TRÍ 4",
+      id: 4,
+      color: '#95CD41'
     },
     {
-      name: "VIEW 5",
-      id: 5
+      name: "VỊ TRÍ 5",
+      id: 5,
+      color: '#95CD41'
+    },
+    {
+      name: "VỊ TRÍ 6",
+      id: 6,
+      color: '#95CD41'
+    },
+    {
+      name: "VỊ TRÍ 7",
+      id: 7,
+      color: '#95CD41'
     },
   ]
   return (
@@ -48,14 +63,14 @@ const ListViewParking = (props) => {
       >
         {promiseInProgress && <ActivityIndicator />}
         <View style={styles.container}>
-          <Text style={styles.text} bold>Ứng dụng giúp bạn tìm kiếm nơi đậu đỗ xe nhanh chóng</Text>
+          {/* <Text style={styles.text} bold>Ứng dụng giúp bạn tìm kiếm nơi đậu đỗ xe nhanh chóng</Text> */}
           {listViewArr && listViewArr.map((item, index) => (
             <TouchableWithoutFeedback
               // onPress={() => handleApprove(item)}
               key={item.id}
             >
               {/* <View onPress={() => toggleDialog()} key={index} style={styles.card}> */}
-              <View key={item.id} style={styles.card}>
+              <View key={item.id} style={{ ...styles.card, backgroundColor: item.color }}>
                 <View style={styles.cardContent}>
                   <Icon
                     name="map-marker-alt"
@@ -89,7 +104,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     height: "100%",
-    marginTop: "2%"
+    marginTop: 30
   },
   text: {
     fontSize: 14,

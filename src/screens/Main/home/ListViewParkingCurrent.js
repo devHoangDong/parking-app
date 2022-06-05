@@ -8,7 +8,7 @@ import { usePromiseTracker } from "react-promise-tracker";
 import argonTheme from '../../../constants/Theme';
 
 
-const ListViewParkingCurrent = (props) => {
+const ListViewParkingCurrent = () => {
   const { promiseInProgress } = usePromiseTracker();
 
   if (promiseInProgress) {
@@ -40,6 +40,16 @@ const ListViewParkingCurrent = (props) => {
     {
       name: "VỊ TRÍ 5",
       id: 5,
+      color: '#95CD41'
+    },
+    {
+      name: "VỊ TRÍ 6",
+      id: 6,
+      color: '#95CD41'
+    },
+    {
+      name: "VỊ TRÍ 7",
+      id: 7,
       color: '#95CD41'
     },
   ]

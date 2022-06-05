@@ -1,20 +1,16 @@
+//galio
+import { Block, theme } from "galio-framework";
 import React from "react";
 import {
-  ScrollView,
+  Dimensions, ScrollView,
   StyleSheet,
   View,
-  Image,
-  TouchableWithoutFeedback,
-  ImageBackground,
-  Dimensions
+  LogBox
 } from "react-native";
-import { format } from "date-fns";
-import vi from 'date-fns/locale/vi'
-//galio
-import { Block, Text, theme } from "galio-framework";
 import { Button } from 'react-native-elements';
 import VideoPlayer from "react-native-video-player";
-const sample = require('./../../../assets/videos/outpy.mp4')
+// const sample = require('./../../../assets/videos/outpy.mp4')
+import sample from './../../../assets/videos/outpy.mp4'
 //argon
 
 const { width } = Dimensions.get("screen");
@@ -22,7 +18,11 @@ const { width } = Dimensions.get("screen");
 const thumbMeasure = (width - 48 - 32) / 3;
 const cardWidth = width - theme.SIZES.BASE * 2;
 
-const ParkingDetail = ({ navigation }) => {
+LogBox.ignoreLogs([
+  'Non-serializable values were found in the navigation state',
+]);
+
+const ParkingDetail = (props) => {
   return (
     <Block flex center style={styles.articles}>
       <ScrollView
@@ -38,7 +38,7 @@ const ParkingDetail = ({ navigation }) => {
           }}
         >
           <VideoPlayer
-            video={sample}
+            video={sample ? sample : null}
             videoWidth={1600}
             videoHeight={900}
             showDuration={false}
@@ -61,17 +61,10 @@ const ParkingDetail = ({ navigation }) => {
               title={'Xem vị trí còn trống'}
               buttonStyle={{ backgroundColor: '#95CD41', height: 48, paddingHorizontal: 40, marginTop: 20 }}
               onPress={() =>
-                navigation.navigate('ListViewParkingCurrent')}
-            // navigation.navigate(
-            // 'ListViewParkingNavigation',
-            // {},
-            // NavigationActions.navigate({
-            //   routeName: 'ListViewParking'
-            // })
+                props.navigation.navigate('ListViewParkingCurrent')}
             ></Button>
           </View>
         </View>
-        {/* {route.params?.item?.detail()} */}
       </ScrollView>
     </Block>
   );
