@@ -6,7 +6,7 @@ import {
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import HomeScreen from '../screens/Main/home/HomeScreen';
-import ListViewParkingNavigation from '../screens/Main/list-signing-request/ListViewParkingNavigation';
+import ListViewParkingNavigation from '../screens/Main/list-view-parking/ListViewParkingNavigation';
 
 const HomeStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
