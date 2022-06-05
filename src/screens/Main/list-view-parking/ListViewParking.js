@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    fontFamily: "Open Sans",
+    // fontFamily: "Open Sans",
     marginTop: 13,
     marginBottom: 36,
     color: "#000"

@@ -30,7 +30,7 @@ const styleLogin = StyleSheet.create({
     fontWeight: 'bold',
     textTransform: 'uppercase',
     fontSize: 18,
-    fontFamily: "Roboto",
+    // fontFamily: "Roboto",
     color: '#000',
     paddingBottom: 10
   },
